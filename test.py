@@ -8,8 +8,7 @@ url = [
 "https://intelinvest.ru/public-portfolio/499056",
 ]
 
-# открываем текстовый файл, куда будем добавлять заголовки
-#file = open("zag.txt", "a")
+
 
 # перебираем все адреса из списка
 for x in url:
@@ -19,15 +18,7 @@ for x in url:
     soup = BeautifulSoup(html_code, "html.parser")
 
     # находим название страницы с помощью метода find()
-    #s = soup.find('div class="dashboard-card-big-nums rub"')
     s = soup.find("div", "dashboard-card-big-nums rub").text
-    #s = soup.get_text()
 
     # выводим его на экран
     print(s)
-
-    # сохраняем заголовок в файле и переносим курсор на новую строку
-    #file.write(s + '. ')
-
-# закрываем файл
-#file.close()
